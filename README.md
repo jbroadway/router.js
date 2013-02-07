@@ -34,6 +34,7 @@ function when `router.go(url)` is called.
 	router.go ('/hello/world');
 })(jQuery);
 </script>
+```
 
 Also see the included [demo.html](https://github.com/jbroadway/router.js/blob/master/demo.html)
 for a complete example.
