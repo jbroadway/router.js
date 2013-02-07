@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>router.js demo</title>
+	<script src="lib/jquery-1.9.1.min.js"></script>
+	<script src="lib/jquery.history.min.js"></script>
+	<script src="src/router.js"></script>
+	<script>
+	$(function () {
+		// some simple route callbacks
+		function change_color (color) {
+			$('#square').css ({'background-color': color});
+		}
+
+		function red () { change_color ('red'); }
+
+		function green () { change_color ('green'); }
+
+		function blue () { change_color ('blue'); }
+
+		// initialize with our route list
+		router.init ({
+			'/red': red,
+			'/green': green,
+			'/blue': blue,
+			'/color/:color': change_color
+		});
+	});
+	</script>
+	<style>
+	#square {
+		width: 100px;
+		height: 100px;
+		background-color: black;
+	}
+	</style>
+</head>
+<body>
+
+<div id="square"></div>
+
+<p>
+	<!-- this will trigger router.route() automatically -->
+	<a href="/red">Red</a>
+	|
+	<!-- this will match the route /color/:color with value 'green' -->
+	<a href="/color/green">Green</a>
+	|
+	<!-- this is how you can trigger routes dynamically -->
+	<a href="#" onclick="router.go ('/blue'); return false">Blue</a>
+</p>
+
+</body>
+</html>
