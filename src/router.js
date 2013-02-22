@@ -137,7 +137,11 @@ var router = (function ($) {
 	 */
 	self.get_path = function (url) {
 		self.a.href = url;
-		return self.a.pathname + self.a.search + self.a.hash;
+		var path = self.a.pathname + self.a.search + self.a.hash;
+		path = path.match ('#')
+			? path.split ('#')[1]
+			: path;
+		return path.match (/^\//) ? path : '/' + path;
 	};
 	
 	/**
