@@ -4,6 +4,8 @@
  * A simple client-side request router to be used in conjunction
  * with History.js and jQuery. Triggers the appropriate callback
  * function when router.go(url) is called.
+ * 
+ * Note: Zepto should also work as an alternative to jQuery.
  *
  * Homepage: https://github.com/jbroadway/router.js
  * License: MIT
@@ -223,4 +225,4 @@ var router = (function ($) {
 	};
 	
 	return self;
-})(jQuery);
+})(jQuery || $);
