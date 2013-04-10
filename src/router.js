@@ -10,6 +10,7 @@
  * Homepage: https://github.com/jbroadway/router.js
  * License: MIT
  * Author: Johnny Broadway <johnny@johnnybroadway.com>
+ * Version: 0.2.0
  * 
  * Usage:
  *
